@@ -45,7 +45,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Category operation"
         },
         "responses": {
           "201": {
@@ -133,7 +134,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Category operation"
         },
         "responses": {
           "200": {
@@ -367,7 +369,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Custom Field operation"
         },
         "responses": {
           "200": {
@@ -484,7 +487,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Doc operation"
         },
         "responses": {
           "201": {
@@ -605,7 +609,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Doc operation"
         },
         "responses": {
           "200": {
@@ -663,7 +668,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Delete Doc operation"
         },
         "responses": {
           "204": {
@@ -1165,7 +1171,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Epic operation"
         },
         "responses": {
           "201": {
@@ -1312,7 +1319,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Epic operation"
         },
         "responses": {
           "200": {
@@ -1434,7 +1442,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Epic Comment operation"
         },
         "responses": {
           "201": {
@@ -1494,7 +1503,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Epic Comment Comment operation"
         },
         "responses": {
           "201": {
@@ -1600,7 +1610,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Epic Comment operation"
         },
         "responses": {
           "200": {
@@ -1772,7 +1783,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Epic Health operation"
         },
         "responses": {
           "201": {
@@ -2007,7 +2019,8 @@
                 ]
               }
             }
-          }
+          },
+          "description": "Payload for the Upload Files operation"
         },
         "responses": {
           "201": {
@@ -2098,7 +2111,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update File operation"
         },
         "responses": {
           "200": {
@@ -2207,7 +2221,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Group operation"
         },
         "responses": {
           "201": {
@@ -2303,7 +2318,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Group operation"
         },
         "responses": {
           "200": {
@@ -2425,7 +2441,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Health operation"
         },
         "responses": {
           "200": {
@@ -2463,7 +2480,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Generic Integration operation"
         },
         "responses": {
           "204": {
@@ -2489,7 +2507,7 @@
           {
             "in": "path",
             "name": "integration-public-id",
-            "description": "",
+            "description": "The unique ID of the Generic Integration",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2519,7 +2537,7 @@
           {
             "in": "path",
             "name": "integration-public-id",
-            "description": "",
+            "description": "The unique ID of the Generic Integration",
             "required": true,
             "schema": {
               "type": "integer",
@@ -2583,7 +2601,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Iteration operation"
         },
         "responses": {
           "201": {
@@ -2711,7 +2730,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Iteration operation"
         },
         "responses": {
           "200": {
@@ -2880,7 +2900,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Key Result operation"
         },
         "responses": {
           "200": {
@@ -3047,7 +3068,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Label operation"
         },
         "responses": {
           "200": {
@@ -3240,7 +3262,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Linked File operation"
         },
         "responses": {
           "201": {
@@ -3328,7 +3351,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Linked File operation"
         },
         "responses": {
           "200": {
@@ -3559,7 +3583,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Milestone operation"
         },
         "responses": {
           "201": {
@@ -3659,7 +3684,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Milestone operation"
         },
         "responses": {
           "200": {
@@ -3803,7 +3829,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Objective operation"
         },
         "responses": {
           "201": {
@@ -3901,7 +3928,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Objective operation"
         },
         "responses": {
           "200": {
@@ -4063,7 +4091,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Objective Health operation"
         },
         "responses": {
           "201": {
@@ -4173,7 +4202,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Project operation"
         },
         "responses": {
           "201": {
@@ -4261,7 +4291,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Project operation"
         },
         "responses": {
           "200": {
@@ -5189,7 +5220,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Multiple Stories operation"
         },
         "responses": {
           "201": {
@@ -5228,7 +5260,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Multiple Stories operation"
         },
         "responses": {
           "200": {
@@ -5267,7 +5300,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Delete Multiple Stories operation"
         },
         "responses": {
           "204": {
@@ -5337,7 +5371,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Query Stories operation"
         },
         "responses": {
           "201": {
@@ -5428,7 +5463,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Story operation"
         },
         "responses": {
           "200": {
@@ -5550,7 +5586,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Story Comment operation"
         },
         "responses": {
           "201": {
@@ -5658,7 +5695,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Story Comment operation"
         },
         "responses": {
           "200": {
@@ -5984,7 +6022,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Task operation"
         },
         "responses": {
           "201": {
@@ -6092,7 +6131,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Task operation"
         },
         "responses": {
           "200": {
@@ -6171,7 +6211,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Create Story Link operation"
         },
         "responses": {
           "201": {
@@ -6259,7 +6300,8 @@
               }
             }
           },
-          "required": true
+          "required": true,
+          "description": "Payload for the Update Story Link operation"
         },
         "responses": {
           "200": {
@@ -6410,7 +6452,8 @@
             }
           }
         },
-        "required": true
+        "required": true,
+        "description": "The emoji reaction to add to or remove from the story comment"
       }
     },
     "securitySchemes": {
@@ -6691,7 +6734,12 @@
             "format": "date-time"
           },
           "author_identity": {
-            "$ref": "#/components/schemas/Identity"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Identity"
+              }
+            ],
+            "description": "The identity of the commit author"
           },
           "repository_id": {
             "description": "The ID of the Repository that contains the Commit.",
@@ -6868,7 +6916,12 @@
             "format": "uuid"
           },
           "story_contents": {
-            "$ref": "#/components/schemas/CreateStoryContents"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/CreateStoryContents"
+              }
+            ],
+            "description": "The story contents the template creates"
           }
         },
         "additionalProperties": false,
@@ -8885,7 +8938,12 @@
             "format": "date-time"
           },
           "story_contents": {
-            "$ref": "#/components/schemas/StoryContents"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryContents"
+              }
+            ],
+            "description": "The story contents the template creates"
           }
         },
         "additionalProperties": false,
@@ -9005,7 +9063,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Epic has been completed.",
@@ -9352,7 +9411,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Epic has been completed.",
@@ -9677,7 +9737,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Epic has been completed.",
@@ -9883,7 +9944,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "type": {
             "description": "The type of Epic State (Unstarted, Started, or Done)",
@@ -10073,7 +10135,7 @@
         "additionalProperties": false
       },
       "Group": {
-        "description": "A Group.",
+        "description": "A Group",
         "type": "object",
         "properties": {
           "app_url": {
@@ -10133,7 +10195,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "color_key": {
             "description": "The color key to be displayed with the Group.",
@@ -10184,7 +10247,12 @@
             "format": "uuid"
           },
           "display_icon": {
-            "$ref": "#/components/schemas/Icon"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Icon"
+              }
+            ],
+            "description": "The icon displayed for the entity"
           },
           "default_workflow_id": {
             "description": "The ID of the default workflow for stories created in this group.",
@@ -11447,13 +11515,28 @@
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewBool"
           },
           "task_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The tasks added to or removed from the story"
           },
           "mention_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "Members added to or removed from the mentions"
           },
           "story_type": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
+              }
+            ],
+            "description": "The change to the type of the story"
           },
           "name": {
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
@@ -11465,55 +11548,130 @@
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewBool"
           },
           "epic_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the epic of the story"
           },
           "branch_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The branches added to or removed from the story"
           },
           "commit_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The commits added to or removed from the story"
           },
           "requested_by_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewUuid"
+              }
+            ],
+            "description": "The change to the member that requested the story"
           },
           "iteration_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the iteration of the story"
           },
           "label_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The labels added to or removed from the story"
           },
           "group_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewUuid"
+              }
+            ],
+            "description": "The change to the group of the story"
           },
           "workflow_state_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the workflow state of the story"
           },
           "object_story_link_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The story links added to or removed from the story as the object"
           },
           "follower_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "The followers added to or removed from the story"
           },
           "owner_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "Members added to or removed from the owners"
           },
           "custom_field_value_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "The custom field values added to or removed from the story"
           },
           "parent_story_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the parent story of the story"
           },
           "estimate": {
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
           },
           "subject_story_link_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesInt"
+              }
+            ],
+            "description": "The story links added to or removed from the story as the subject"
           },
           "blocked": {
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewBool"
           },
           "project_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the project of the story"
           },
           "deadline": {
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
@@ -11529,10 +11687,20 @@
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
           },
           "object_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the ID of the object story of the story link"
           },
           "subject_id": {
-            "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeOldNewInt"
+              }
+            ],
+            "description": "The change to the ID of the subject story of the story link"
           }
         },
         "additionalProperties": false
@@ -11548,10 +11716,20 @@
             "$ref": "#/components/schemas/StoryHistoryChangeOldNewStr"
           },
           "mention_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "Members added to or removed from the mentions"
           },
           "owner_ids": {
-            "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StoryHistoryChangeAddsRemovesUuid"
+              }
+            ],
+            "description": "Members added to or removed from the owners"
           }
         },
         "additionalProperties": false
@@ -12169,7 +12347,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "label_ids": {
             "description": "An array of label ids attached to the iteration.",
@@ -12358,7 +12537,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "label_ids": {
             "description": "An array of label ids attached to the iteration.",
@@ -12636,7 +12816,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "updated_at": {
             "description": "The time/date that the Label was updated.",
@@ -12714,7 +12895,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "updated_at": {
             "description": "The time/date that the Label was updated.",
@@ -13042,7 +13224,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "state": {
             "description": "The user state, one of partial, full, disabled, or imported.  A partial user is disabled, has no means to log in, and is not an import user.  A full user is enabled and has a means to log in.  A disabled user is disabled and has a means to log in.  An import user is disabled, has no means to log in, and is marked as an import user.",
@@ -13213,7 +13396,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Milestone has been completed.",
@@ -13365,7 +13549,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Objectivehas been completed.",
@@ -13492,7 +13677,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Milestone has been completed.",
@@ -13670,7 +13856,12 @@
             "format": "uuid"
           },
           "display_icon": {
-            "$ref": "#/components/schemas/Icon"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Icon"
+              }
+            ],
+            "description": "The icon displayed for the entity"
           },
           "is_owner": {
             "description": "A boolean indicating whether this profile is an owner at their associated organization.",
@@ -14393,7 +14584,12 @@
             }
           },
           "synced_item": {
-            "$ref": "#/components/schemas/SyncedItem"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SyncedItem"
+              }
+            ],
+            "description": "The external application the story is synced with"
           },
           "member_mention_ids": {
             "description": "An array of Member IDs that have been mentioned in the Story description.",
@@ -14450,7 +14646,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Story has been completed.",
@@ -15295,7 +15492,12 @@
             }
           },
           "synced_item": {
-            "$ref": "#/components/schemas/SyncedItem"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SyncedItem"
+              }
+            ],
+            "description": "The external application the story is synced with"
           },
           "member_mention_ids": {
             "description": "An array of Member IDs that have been mentioned in the Story description.",
@@ -15365,7 +15567,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Story has been completed.",
@@ -15737,7 +15940,12 @@
             }
           },
           "synced_item": {
-            "$ref": "#/components/schemas/SyncedItem"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/SyncedItem"
+              }
+            ],
+            "description": "The external application the story is synced with"
           },
           "member_mention_ids": {
             "description": "An array of Member IDs that have been mentioned in the Story description.",
@@ -15800,7 +16008,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "completed": {
             "description": "A true/false boolean indicating if the Story has been completed.",
@@ -16127,7 +16336,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "updated_at": {
             "description": "The time/date the Task was updated.",
@@ -16554,7 +16764,12 @@
             "type": "string"
           },
           "story_contents": {
-            "$ref": "#/components/schemas/UpdateStoryContents"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/UpdateStoryContents"
+              }
+            ],
+            "description": "The story contents the template creates"
           }
         },
         "additionalProperties": false
@@ -17986,7 +18201,8 @@
           },
           "global_id": {
             "x-doc-skip": true,
-            "type": "string"
+            "type": "string",
+            "description": "The globally unique identifier of the resource"
           },
           "num_stories": {
             "description": "The number of Stories currently in that Workflow State.",
