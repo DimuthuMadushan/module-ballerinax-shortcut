@@ -28,6 +28,7 @@ To use the Shortcut connector in your Ballerina application, update the `.bal` f
 ### Step 1: Import the module
 
 ```ballerina
+import ballerina/io;
 import ballerinax/shortcut;
 ```
 
@@ -53,7 +54,10 @@ final shortcut:Client shortcutClient = check new ({shortcutToken});
 
 ```ballerina
 public function main() returns error? {
-    shortcut:EpicSlim[] _ = check shortcutClient->listEpics();
+    shortcut:EpicSlim[] epics = check shortcutClient->listEpics();
+    foreach shortcut:EpicSlim epic in epics {
+        io:println(epic.id, ": ", epic.name);
+    }
 }
 ```
 

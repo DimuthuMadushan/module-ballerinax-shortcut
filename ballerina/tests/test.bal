@@ -26,68 +26,72 @@ final string token = isLiveServer ? os:getEnv("SHORTCUT_API_TOKEN") : "test_toke
 
 final Client shortcut = check new ({shortcutToken: token}, {httpVersion: http:HTTP_1_1}, serviceUrl);
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
-function testListCategories() returns error? {
-    Category[] response = check shortcut->listCategories();
-    test:assertTrue(response.length() > 0);
-}
+// IDs of the resources created by the create tests. The get, update and list tests use them,
+// and `cleanUp` deletes them after a live run.
+int categoryId = 0;
+int epicId = 0;
+int storyId = 0;
+int labelId = 0;
+int iterationId = 0;
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testCreateCategory() returns error? {
     Category response = check shortcut->createCategory({name: "Platform"});
     test:assertEquals(response.name, "Platform");
+    categoryId = response.id;
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateCategory]}
+function testListCategories() returns error? {
+    Category[] response = check shortcut->listCategories();
+    test:assertTrue(response.length() > 0);
+}
+
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateCategory]}
 function testGetCategory() returns error? {
-    Category response = check shortcut->getCategory(1);
-    test:assertEquals(response.id, 1);
+    Category response = check shortcut->getCategory(categoryId);
+    test:assertEquals(response.id, categoryId);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testGetCategory]}
 function testUpdateCategory() returns error? {
-    Category response = check shortcut->updateCategory(1, {name: "Platform Engineering"});
+    Category response = check shortcut->updateCategory(categoryId, {name: "Platform Engineering"});
     test:assertEquals(response.name, "Platform Engineering");
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testDeleteCategory() returns error? {
-    if isLiveServer {
-        return;
-    }
     Category created = check shortcut->createCategory({name: "Temporary"});
     check shortcut->deleteCategory(created.id);
-}
-
-@test:Config {groups: ["live_tests", "mock_tests"]}
-function testListEpics() returns error? {
-    EpicSlim[] response = check shortcut->listEpics();
-    test:assertTrue(response.length() > 0);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testCreateEpic() returns error? {
     Epic response = check shortcut->createEpic({name: "Q4 Roadmap"});
     test:assertEquals(response.name, "Q4 Roadmap");
+    epicId = response.id;
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateEpic]}
+function testListEpics() returns error? {
+    EpicSlim[] response = check shortcut->listEpics();
+    test:assertTrue(response.length() > 0);
+}
+
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateEpic]}
 function testGetEpic() returns error? {
-    Epic response = check shortcut->getEpic(101);
-    test:assertEquals(response.id, 101);
+    Epic response = check shortcut->getEpic(epicId);
+    test:assertEquals(response.id, epicId);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testGetEpic]}
 function testUpdateEpic() returns error? {
-    Epic response = check shortcut->updateEpic(101, {name: "Q4 Roadmap Updated"});
+    Epic response = check shortcut->updateEpic(epicId, {name: "Q4 Roadmap Updated"});
     test:assertEquals(response.name, "Q4 Roadmap Updated");
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testDeleteEpic() returns error? {
-    if isLiveServer {
-        return;
-    }
     Epic created = check shortcut->createEpic({name: "Temporary epic"});
     check shortcut->deleteEpic(created.id);
 }
@@ -96,45 +100,44 @@ function testDeleteEpic() returns error? {
 function testCreateStory() returns error? {
     Story response = check shortcut->createStory({name: "Add SSO support"});
     test:assertEquals(response.name, "Add SSO support");
+    storyId = response.id;
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateStory]}
 function testGetStory() returns error? {
-    Story response = check shortcut->getStory(401);
-    test:assertEquals(response.id, 401);
+    Story response = check shortcut->getStory(storyId);
+    test:assertEquals(response.id, storyId);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testGetStory]}
 function testUpdateStory() returns error? {
-    Story response = check shortcut->updateStory(401, {name: "Add SSO support v2"});
+    Story response = check shortcut->updateStory(storyId, {name: "Add SSO support v2"});
     test:assertEquals(response.name, "Add SSO support v2");
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testDeleteStory() returns error? {
-    if isLiveServer {
-        return;
-    }
     Story created = check shortcut->createStory({name: "Temporary story"});
     check shortcut->deleteStory(created.id);
-}
-
-@test:Config {groups: ["live_tests", "mock_tests"]}
-function testListLabels() returns error? {
-    Label[] response = check shortcut->listLabels();
-    test:assertTrue(response.length() > 0);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testCreateLabel() returns error? {
     Label response = check shortcut->createLabel({name: "tech-debt"});
     test:assertEquals(response.name, "tech-debt");
+    labelId = response.id;
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateLabel]}
+function testListLabels() returns error? {
+    Label[] response = check shortcut->listLabels();
+    test:assertTrue(response.length() > 0);
+}
+
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateLabel]}
 function testGetLabel() returns error? {
-    Label response = check shortcut->getLabel(301);
-    test:assertEquals(response.id, 301);
+    Label response = check shortcut->getLabel(labelId);
+    test:assertEquals(response.id, labelId);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
@@ -143,10 +146,11 @@ function testListMembers() returns error? {
     test:assertTrue(response.length() > 0);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testListMembers]}
 function testGetMember() returns error? {
-    Member response = check shortcut->getMember("5f9b3c1e-7a2d-4c1b-9e61-0a1b2c3d4e5f");
-    test:assertEquals(response.id, "5f9b3c1e-7a2d-4c1b-9e61-0a1b2c3d4e5f");
+    Member[] members = check shortcut->listMembers();
+    Member response = check shortcut->getMember(members[0].id);
+    test:assertEquals(response.id, members[0].id);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
@@ -155,32 +159,58 @@ function testListWorkflows() returns error? {
     test:assertTrue(response.length() > 0);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testListWorkflows]}
 function testGetWorkflow() returns error? {
-    Workflow response = check shortcut->getWorkflow(501);
-    test:assertEquals(response.id, 501);
-}
-
-@test:Config {groups: ["live_tests", "mock_tests"]}
-function testListIterations() returns error? {
-    IterationSlim[] response = check shortcut->listIterations();
-    test:assertTrue(response.length() > 0);
+    Workflow[] workflows = check shortcut->listWorkflows();
+    Workflow response = check shortcut->getWorkflow(workflows[0].id);
+    test:assertEquals(response.id, workflows[0].id);
 }
 
 @test:Config {groups: ["live_tests", "mock_tests"]}
 function testCreateIteration() returns error? {
     Iteration response = check shortcut->createIteration({name: "Sprint 44", startDate: "2024-07-01", endDate: "2024-07-14"});
     test:assertEquals(response.name, "Sprint 44");
+    iterationId = response.id;
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateIteration]}
+function testListIterations() returns error? {
+    IterationSlim[] response = check shortcut->listIterations();
+    test:assertTrue(response.length() > 0);
+}
+
+@test:Config {groups: ["live_tests", "mock_tests"], dependsOn: [testCreateIteration]}
 function testGetIteration() returns error? {
-    Iteration response = check shortcut->getIteration(201);
-    test:assertEquals(response.id, 201);
+    Iteration response = check shortcut->getIteration(iterationId);
+    test:assertEquals(response.id, iterationId);
 }
 
-@test:Config {groups: ["live_tests", "mock_tests"]}
+// Search results depend on the workspace's existing stories and on asynchronous indexing,
+// so this runs against the mock only.
+@test:Config {groups: ["mock_tests"]}
 function testSearchStories() returns error? {
     StorySearchResults response = check shortcut->searchStories(query = "login");
     test:assertTrue(response.data.length() > 0);
+}
+
+@test:AfterSuite {alwaysRun: true}
+function cleanUp() returns error? {
+    if !isLiveServer {
+        return;
+    }
+    if storyId != 0 {
+        check shortcut->deleteStory(storyId);
+    }
+    if epicId != 0 {
+        check shortcut->deleteEpic(epicId);
+    }
+    if categoryId != 0 {
+        check shortcut->deleteCategory(categoryId);
+    }
+    if labelId != 0 {
+        check shortcut->deleteLabel(labelId);
+    }
+    if iterationId != 0 {
+        check shortcut->deleteIteration(iterationId);
+    }
 }
